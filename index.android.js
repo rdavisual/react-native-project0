@@ -14,10 +14,9 @@
    TouchableHighlight
  } from 'react-native';
 
- import Login from './src/components/login/loginView';
- // import Dashboard from './src/components/dashboardView';
- import Tabs from './src/components/tabs/tabs';
-
+import Login from './src/components/login/loginView';
+import Tabs from './src/components/tabs/tabs';
+import ComicDetailView from './src/components/comicDetail/comicDetailView';
 
  const NavigatorBarRouterMapper = {
      LeftButton: (route, navigator, index) => {        //MAYUSCULAS
@@ -59,10 +58,10 @@
                  return (
                      <Tabs {...route.props} navigator={navigator} route={route} />
                  );
-            //  case 'Details':
-            //      return (
-            //          <ComicDetailView {...route.props} navigator={navigator} route={route} />
-            //      );
+             case 'Details':
+                 return (
+                     <ComicDetailView {...route.props} navigator={navigator} route={route} />
+                 );
              default:
                  return null;
          }
@@ -73,12 +72,6 @@
                  style={{backgroundColor: '#fff'}}
                  initialRoute={{name:'Login'}}
                  renderScene={this.renderScene}
-                 configureScene={(route) => {
-                     if (route.sceneConfig) {
-                         return route.sceneConfig;
-                     }
-                     return Navigator.SceneConfigs.FloatFromRight;    //animacion
-                 }}
                  navigationBar={
                      <Navigator.NavigationBar routeMapper={NavigatorBarRouterMapper} />
                  }

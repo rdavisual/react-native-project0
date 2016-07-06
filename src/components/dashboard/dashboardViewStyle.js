@@ -35,6 +35,10 @@ const style = StyleSheet.create({
     ListView: {
         paddingTop: 64,
         marginBottom: 49,
+    },
+    loading: {
+        fontSize: 27,
+        color: '#000',
     }
     // container: {
     //     flex: 1,

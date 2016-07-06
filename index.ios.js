@@ -15,7 +15,6 @@ import {
 } from 'react-native';
 
 import Login from './src/components/login/loginView';
-// import Dashboard from './src/components/dashboardView';
 import Tabs from './src/components/tabs/tabs';
 import ComicDetailView from './src/components/comicDetail/comicDetailView';
 

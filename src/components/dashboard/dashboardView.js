@@ -39,6 +39,7 @@ class DashboardView extends Component {
 
     constructor(props) {
         super(props);
+
         this.timestamp = 1;
         this.public_key = 'e0f4b99462ce036b0a07a99e605a8095';
         this.private_key = '7802ac6d2417274ad2e0b20f3e83aea4c2764172';
@@ -71,8 +72,6 @@ class DashboardView extends Component {
     }
 
     onComicPressed(comic) {
-        console.log('--- this.props ---');
-        console.log(this.props);
         this.props.navigator.push({
             name: 'Details',
             title: comic.name,
@@ -97,7 +96,7 @@ class DashboardView extends Component {
         if (!this.state.loaded) {
             return (
                 <View style={styles.container}>
-                    <Text style={styles.available} > Cargando . . . </Text>
+                    <Text style={styles.loading} > Cargando . . . </Text>
                 </View>
             );
 
