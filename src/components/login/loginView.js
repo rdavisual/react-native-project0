@@ -12,13 +12,16 @@ import styles from './loginViewStyle';
 
 class loginView extends Component {
     onLogin() {
-        Alert.alert('Acceso','esto es una frase', [
+        Alert.alert('Entrada','estas seguro ?', [
             {
-                text: 'Aceptar',
+                text: 'Si',
                 onPress: this.accept.bind(this)
             }, {
-                text: 'Cancelar',
+                text: 'No',
                 onPress: this.cancel.bind(this)
+            }, {
+                text: 'Tal vez',
+                onPress: () => Alert.alert('tu eres tonto..')
             }
         ]);
     }
@@ -35,11 +38,11 @@ class loginView extends Component {
     }
     render () {
         return (
-            <Image style={styles.container} source={{uri: 'https://images8.alphacoders.com/397/397989.jpg'}}>
+            <Image style={styles.container} source={{uri: 'https://mfiles.alphacoders.com/597/597688.jpg'}}>
                 <View  >
-                    <Text style={styles.title} >Esto es un texto</Text>
+                    <Text style={styles.title} >Boton para entrar:</Text>
                     <TouchableHighlight style={styles.botton} onPress={this.onLogin.bind(this)} >
-                        <Text style={styles.textButton}>y esto un boton</Text>
+                        <Text style={styles.textButton}>Entrar</Text>
                     </TouchableHighlight>
                 </View>
             </Image>

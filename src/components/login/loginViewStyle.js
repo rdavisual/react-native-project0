@@ -13,7 +13,7 @@ const style = StyleSheet.create({
         fontSize: 25,
         color: 'white',
         textAlign: 'center',
-        backgroundColor: 'rgba(0,0,0,0)'
+        // backgroundColor: 'rgba(0,0,0,0)'
     },
     instructions: {
         textAlign: 'center',
@@ -23,15 +23,19 @@ const style = StyleSheet.create({
     botton: {
         width: 300,
         height: 40,
-        backgroundColor: 'blue',
+        backgroundColor: 'white',
+        borderStyle: 'solid',
+        borderColor: '#000',
+        borderWidth: 3,
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
         margin: 10,
-        marginTop: 30
+        marginTop: 30,
     },
     textButton: {
-        color: 'white'
+        color: '#000',
+        fontWeight: 'bold',
     }
 });
 

@@ -49,6 +49,7 @@ class DashboardView extends Component {
             }),
             loaded: false
         };
+        this.countComic = 0;
         let hash = CryptoJS.MD5(this.timestamp + this.private_key + this.public_key);
     }
 
@@ -60,8 +61,11 @@ class DashboardView extends Component {
         fetch(url)
             .then( response => response.json() )
             .then( responseData => {
+                console.log('----this.state.dataSource----');
+                console.log(responseData);
                 this.setState({
                     dataSource: this.state.dataSource.cloneWithRows(responseData.data.results),
+                    data: responseData.data,
                     loaded: true
                 });
             });
@@ -71,17 +75,19 @@ class DashboardView extends Component {
         this.fetchData();
     }
 
-    onComicPressed(comic) {
+    onComicPressed(title, count) {
         this.props.navigator.push({
             name: 'Details',
-            title: comic.name,
-            passProps: { comic }
+            title: title,
+            passProps: { comics : this.state.data.results, index: count }
         });
     }
 
     renderComic(comic) {
+        this.countComic = this.countComic+1;
+        let count = this.countComic-1;
         return (
-            <TouchableHighlight onPress={() => this.onComicPressed(comic)} >
+            <TouchableHighlight onPress={() => this.onComicPressed(comic.title, count)} >
                 <Image source={{uri: `${comic.thumbnail.path}.jpg`}}  style={styles.backgroundImage}>
                     <View style={styles.rightContainer} >
                         <Text style={styles.title}>{comic.name}</Text>
@@ -96,7 +102,7 @@ class DashboardView extends Component {
         if (!this.state.loaded) {
             return (
                 <View style={styles.container}>
-                    <Text style={styles.loading} > Cargando . . . </Text>
+                    <Text style={[styles.loading, {paddingTop: 35}]} > Cargando . . . </Text>
                 </View>
             );
 

@@ -72,6 +72,12 @@ import ComicDetailView from './src/components/comicDetail/comicDetailView';
                  style={{backgroundColor: '#fff'}}
                  initialRoute={{name:'Login'}}
                  renderScene={this.renderScene}
+                 configureScene={(route) => {
+                     if (route.sceneConfig) {
+                         return route.sceneConfig;
+                     }
+                     return Navigator.SceneConfigs.FloatFromBottom;    //animacion
+                 }}
                  navigationBar={
                      <Navigator.NavigationBar routeMapper={NavigatorBarRouterMapper} />
                  }
