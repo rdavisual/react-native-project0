@@ -1,22 +1,21 @@
 // /**
-//  * Sample React Native App
-//  * https://github.com/facebook/react-native
-//  * @flow
-//  */
+// * Sample React Native App
+// * https://github.com/facebook/react-native
+// * @flow
+// */
 //
 // import React, { Component } from 'react';
 // import {
-//   AppRegistry,
-//   StyleSheet,
-//   Text,
-//   View,
-//   Navigator,
-//   TouchableHighlight
+//     StyleSheet,
+//     Text,
+//     View,
+//     Navigator,
+//     TouchableHighlight
 // } from 'react-native';
 //
-// import Login from './src/components/login/loginView';
-// import Tabs from './src/components/tabs/tabs';
-// import ComicDetailView from './src/components/comicDetail/comicDetailView';
+// import Login from '../login/loginView';
+// import Tabs from '../tabs/tabs';
+// import ComicDetailView from '../comicDetail/comicDetailView';
 //
 // const NavigatorBarRouterMapper = {
 //     LeftButton: (route, navigator, index) => {        //MAYUSCULAS
@@ -64,8 +63,8 @@
 //                 );
 //             default:
 //                 return null;
+//             }
 //         }
-//     }
 //     render() {
 //         return (
 //             <Navigator
@@ -76,7 +75,7 @@
 //                     if (route.sceneConfig) {
 //                         return route.sceneConfig;
 //                     }
-//                     return Navigator.SceneConfigs.FloatFromRight;    //animacion
+//                     return Navigator.SceneConfigs.FloatFromBottom;    //animacion
 //                 }}
 //                 navigationBar={
 //                     <Navigator.NavigationBar routeMapper={NavigatorBarRouterMapper} />
@@ -86,9 +85,10 @@
 //     }
 // }
 //
-// AppRegistry.registerComponent('Project0', () => Project0);
-import { AppRegistry } from 'react-native';
+// export default Project0;
 
-import Main from './src/components';
+import App from './app_base';
 
-AppRegistry.registerComponent('Project0', () => Main);
+class AppAndroid extends App {}
+
+export default AppAndroid;

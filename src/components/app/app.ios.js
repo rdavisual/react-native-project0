@@ -6,7 +6,6 @@
 //
 // import React, { Component } from 'react';
 // import {
-//   AppRegistry,
 //   StyleSheet,
 //   Text,
 //   View,
@@ -14,9 +13,9 @@
 //   TouchableHighlight
 // } from 'react-native';
 //
-// import Login from './src/components/login/loginView';
-// import Tabs from './src/components/tabs/tabs';
-// import ComicDetailView from './src/components/comicDetail/comicDetailView';
+// import Login from '../login/loginView';
+// import Tabs from '../tabs/tabs';
+// import ComicDetailView from '../comicDetail/comicDetailView';
 //
 // const NavigatorBarRouterMapper = {
 //     LeftButton: (route, navigator, index) => {        //MAYUSCULAS
@@ -86,9 +85,9 @@
 //     }
 // }
 //
-// AppRegistry.registerComponent('Project0', () => Project0);
-import { AppRegistry } from 'react-native';
+// export default Project0;
+import App from './app_base';
 
-import Main from './src/components';
+class AppIOS extends App {}
 
-AppRegistry.registerComponent('Project0', () => Main);
+export default AppIOS;
