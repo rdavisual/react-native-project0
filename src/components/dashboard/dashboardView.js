@@ -21,9 +21,6 @@ class DashboardView extends Component {
     constructor(props) {
         super(props);
 
-        // this.timestamp = 1;
-        // this.public_key = 'e0f4b99462ce036b0a07a99e605a8095';
-        // this.private_key = '7802ac6d2417274ad2e0b20f3e83aea4c2764172';
         this.state = {
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2

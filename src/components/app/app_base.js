@@ -24,9 +24,9 @@ const NavigatorBarRouterMapper = {
         }
         return (
             <TouchableHighlight onPress={() => {
-                if (index > 0) {
+                // if (index > 0) {
                     navigator.pop();
-                }
+                // }
             } }>
                 <Text style={{marginTop: 10, marginLeft: 20, color: '#007AFF'}}>Back</Text>
             </TouchableHighlight>

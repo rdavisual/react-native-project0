@@ -19,9 +19,6 @@ class loginView extends Component {
             }, {
                 text: 'No',
                 onPress: this.cancel.bind(this)
-            }, {
-                text: 'Tal vez',
-                onPress: () => Alert.alert('tu eres tonto..')
             }
         ]);
     }

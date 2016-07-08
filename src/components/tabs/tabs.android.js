@@ -48,6 +48,12 @@ class Tabs extends Component{
                         {/*<ToolbarAndroid title="Hero" style={styles.toolbar} />*/}
                         <HeroesView />
                     </View>
+                    <View>
+                        {/*<ToolbarAndroid title="Hero" style={styles.toolbar} />*/}
+                        <View  style={{backgroundColor: 'rgba(0,0,0,.8)', flex: 1}}>
+                            <Text style={{marginTop:50, textAlign: 'center', color: 'red' }}>ola</Text>
+                        </View>
+                    </View>
                 </ViewPagerAndroid>
 
             </DrawerLayoutAndroid>
