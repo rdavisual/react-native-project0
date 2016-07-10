@@ -4,10 +4,11 @@ import {
     Text,
     StyleSheet,
     ListView,
+    RecyclerViewBackedScrollView,
     TouchableHighlight,
     Image
 } from 'react-native';
-// import CryptoJS from 'crypto-js';
+
 import { connect } from 'react-redux';
 import { fetchCharacters } from '../../actions/index';
 
@@ -30,22 +31,6 @@ class DashboardView extends Component {
         this.countComic = 0;
     }
 
-    // CAMBIAR A ACTIONS
-    // fetchData() {
-    //     const hash = CryptoJS.MD5(this.timestamp + this.private_key + this.public_key),
-    //         url = `${REQUEST_URL}?ts=${this.timestamp}&apikey=${this.public_key}&hash=${hash}`;
-    //
-    //     fetch(url)
-    //         .then( response => response.json() )
-    //         .then( responseData => {
-    //             this.setState({
-    //                 dataSource: this.state.dataSource.cloneWithRows(responseData.data.results),
-    //                 data: responseData.data,
-    //                 loaded: true
-    //             });
-    //         });
-    // }
-    // CAMBIAR A ACTIONS
     fetchData() {
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(this.props.characters),
@@ -94,6 +79,7 @@ class DashboardView extends Component {
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderComic.bind(this)}
+                renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
                 style={styles.listview}
             />
         );

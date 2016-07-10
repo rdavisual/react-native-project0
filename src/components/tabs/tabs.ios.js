@@ -57,7 +57,6 @@ class Tabs extends Component{
                     <View  style={{backgroundColor: 'rgba(0,0,0,.8)', flex: 1}}>
                         <Text style={{marginTop:50, textAlign: 'center', color: 'red' }}>ola</Text>
                     </View>
-                    {/*<HeroesView />*/}
                 </TabBarIOS.Item>
             </TabBarIOS>
         );

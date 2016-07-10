@@ -1,9 +1,3 @@
-/**
-* Sample React Native App
-* https://github.com/facebook/react-native
-* @flow
-*/
-
 import React, { Component } from 'react';
 import {
     StyleSheet,
@@ -23,11 +17,7 @@ const NavigatorBarRouterMapper = {
             return null;
         }
         return (
-            <TouchableHighlight onPress={() => {
-                // if (index > 0) {
-                    navigator.pop();
-                // }
-            } }>
+            <TouchableHighlight onPress={() => navigator.pop() }>
                 <Text style={{marginTop: 10, marginLeft: 20, color: '#007AFF'}}>Back</Text>
             </TouchableHighlight>
         );
@@ -46,7 +36,7 @@ const NavigatorBarRouterMapper = {
 
 };
 
-class Project0 extends Component {
+class App extends Component {
     renderScene(route, navigator) {
         switch (route.name) {
             case 'Login':
@@ -85,4 +75,4 @@ class Project0 extends Component {
     }
 }
 
-export default Project0;
+export default App;
